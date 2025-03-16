@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_guru');
             $table->string('nip')->unique();
             $table->string('jabatan');
-            $table->string('mata_pelajaran');
+            $table->foreignId('mata_pelajaran_id')->constrained('mata_pelajaran');
             $table->string('alamat');
             $table->string('telepon');
             $table->string('email')->unique();

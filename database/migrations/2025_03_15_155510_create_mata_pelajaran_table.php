@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nama_mata_pelajaran');
             $table->text('deskripsi')->nullable();
-            $table->foreignId('guru_id')->constrained('guru');
             $table->timestamps();
         });
     }
