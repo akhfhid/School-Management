@@ -16,14 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-<<<<<<< HEAD
     return Inertia::render('index');
 })->middleware(['auth', 'verified'])->name('dashboard');
-=======
     $dataset = Ujian::with('mata_pelajaran')->get();
     return Inertia::render('Dashboard', [$dataset, 'set'=>['s','2']]);
-}); // !todo add login middleware later
->>>>>>> e01288a3cd2b2d2e4683fb36be4bf86dc2f63fa8
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
